@@ -5,7 +5,7 @@ export default gql`
     id: String!
     username: String!
     email: String!
-    name: String!
+    name: String
     location: String
     avatarURL: String
     githubUsername: String
@@ -20,9 +20,9 @@ export default gql`
     createAccount(
       username: String!
       email: String!
-      name: String!
+      name: String
       location: String
-      githubUsername: String!
+      githubUsername: String
       password: String!
     ): CreateAccountResult!
   }

@@ -3,11 +3,11 @@ CREATE TABLE "User" (
     "id" SERIAL NOT NULL,
     "username" TEXT NOT NULL,
     "email" TEXT NOT NULL,
-    "name" TEXT NOT NULL,
+    "name" TEXT,
     "location" TEXT,
     "password" TEXT NOT NULL,
     "avatarURL" TEXT,
-    "githubUsername" TEXT NOT NULL,
+    "githubUsername" TEXT,
     "createAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updateAt" TIMESTAMP(3) NOT NULL,
 
@@ -19,6 +19,3 @@ CREATE UNIQUE INDEX "User_username_key" ON "User"("username");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
-
--- CreateIndex
-CREATE UNIQUE INDEX "User_githubUsername_key" ON "User"("githubUsername");
