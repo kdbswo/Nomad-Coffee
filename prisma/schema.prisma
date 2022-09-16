@@ -18,7 +18,7 @@ model User {
   location       String?
   password       String
   avatarURL      String?
-  githubUsername String
+  githubUsername String?
   createAt       DateTime @default(now())
   updateAt       DateTime @updatedAt
 }
