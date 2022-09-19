@@ -17,7 +17,6 @@ const startServer = async () => {
     context: async ({ req }) => {
       return {
         loggedInUser: await getUsers(req.headers.token),
-        protectedResolver,
       };
     },
   });
