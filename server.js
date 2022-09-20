@@ -3,7 +3,7 @@ import express from "express";
 import loogger from "morgan";
 import { ApolloServer } from "apollo-server-express";
 import { typeDefs, resolvers } from "./schema";
-import { getUsers, protectedResolver } from "./users/users.utils";
+import { getUsers } from "./users/users.utils";
 import graphqlUploadExpress from "graphql-upload/graphqlUploadExpress.js";
 import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core";
 

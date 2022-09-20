@@ -2,6 +2,36 @@ import client from "../client";
 
 export default {
   User: {
+    followers: async ({ id }, { lastId }) => {
+      const followers = await client.user.findMany({
+        where: {
+          following: {
+            some: { id },
+          },
+        },
+        take: 5,
+        skip: lastId ? 1 : 0,
+        ...(lastId && { cursor: { id: lastId } }),
+      });
+      return followers;
+    },
+
+    following: ({ id }, { lastId }) => {
+      const following = client.user.findMany({
+        where: {
+          followers: {
+            some: {
+              id,
+            },
+          },
+        },
+        take: 5,
+        skip: lastId ? 1 : 0,
+        ...(lastId && { cursor: { id: lastId } }),
+      });
+      return following;
+    },
+
     totalFollowing: ({ id }) =>
       client.user.count({
         where: {

@@ -11,8 +11,8 @@ export default gql`
     githubUsername: String
     createAt: String!
     updateAt: String!
-    following: [User]
-    followers: [User]
+    following(lastId: Int): [User]
+    followers(lastId: Int): [User]
     totalFollowing: Int!
     totalFollowers: Int!
     isMe: Boolean!
