@@ -71,7 +71,5 @@ export default {
       });
       return Boolean(exists);
     },
-    coffeeShop: ({ id }) =>
-      client.user.findUnique({ where: { id } }).coffeeShop(),
   },
 };
