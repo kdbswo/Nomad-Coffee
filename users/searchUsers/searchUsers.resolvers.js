@@ -10,7 +10,6 @@ export default {
             startsWith: keyword.toLowerCase(),
           },
         },
-
         take: 5,
         skip: (page - 1) * 5,
       });
