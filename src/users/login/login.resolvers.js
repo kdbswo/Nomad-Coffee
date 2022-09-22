@@ -10,7 +10,7 @@ export default {
       });
       if (!user) {
         return {
-          id: false,
+          ok: false,
           error: "User not found",
         };
       }

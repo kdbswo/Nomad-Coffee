@@ -29,7 +29,7 @@ const startServer = async () => {
   apollo.applyMiddleware({ app });
 
   await new Promise((func) => app.listen({ port: PORT }, func));
-  console.log(`🚀 Server: http://localhost:${PORT}${apollo.graphqlPath}✅`);
+  console.log(`🚀 Server: http://localhost:${PORT}${apollo.graphqlPath} ✅`);
 };
 
 startServer();
