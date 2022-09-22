@@ -5,7 +5,7 @@ import client from "../../client";
 export default {
   Mutation: {
     login: async (_, { username, password }) => {
-      const user = await client.user.findFirst({
+      const user = await client.user.findUnique({
         where: { username },
       });
       if (!user) {
@@ -15,6 +15,7 @@ export default {
         };
       }
       const passwordOk = await bcrypt.compare(password, user.password);
+
       if (!passwordOk) {
         return {
           ok: false,
