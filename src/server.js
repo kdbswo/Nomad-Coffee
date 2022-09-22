@@ -13,6 +13,7 @@ const startServer = async () => {
   const apollo = new ApolloServer({
     typeDefs,
     resolvers,
+    playground: true,
     plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
     context: async ({ req }) => {
       return {
